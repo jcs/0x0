@@ -2,7 +2,7 @@ The Null Pointer
 ================
 
 This is a no-bullshit file hosting and URL shortening service that also runs
-`0x0.st <https://0x0.st>`_. Use with uWSGI.
+`0x0.envs.net <https://0x0.envs.net>`_. Use with uWSGI.
 
 If you are running nginx, you should use the ``X-Accel-Redirect`` header.
 To make it work, include this in your nginx config’s ``server`` block::
@@ -35,6 +35,18 @@ the following:
 * Caffe Python module (built for Python 3)
 * ``ffmpegthumbnailer`` executable in ``$PATH``
 
+
+INSTALL
+-------
+
+```bash
+apt update
+apt install python3-pip nginx uwsgi uwsgi-plugin-python3 certbot
+git clone https://github.com/cremesk/0x0.git /srv/0x0
+
+cd /srv/0x0
+pip3 install --user `cat requirements.txt`
+```
 
 FAQ
 ---

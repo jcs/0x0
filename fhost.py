@@ -19,7 +19,7 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///db.sqlite" # "postgresql://0x0@/0x0"
 app.config["PREFERRED_URL_SCHEME"] = "https" # nginx users: make sure to have 'uwsgi_param UWSGI_SCHEME $scheme;' in your config
-app.config["MAX_CONTENT_LENGTH"] = 256 * 1024 * 1024
+app.config["MAX_CONTENT_LENGTH"] = 512 * 1024 * 1024
 app.config["MAX_URL_LENGTH"] = 4096
 app.config["FHOST_STORAGE_PATH"] = "up"
 app.config["FHOST_USE_X_ACCEL_REDIRECT"] = True # expect nginx by default
@@ -40,6 +40,7 @@ app.config["FHOST_EXT_OVERRIDE"] = {
 # default blacklist to avoid AV mafia extortion
 app.config["FHOST_MIME_BLACKLIST"] = [
     "application/x-dosexec",
+    "application/x-executable",
     "application/java-archive",
     "application/java-vm"
 ]
@@ -359,6 +360,28 @@ Maximum file size: {1}
 Not allowed: {5}
 
 
+UPLOAD DIRECTLY
+---------------
+<form action="{0}" method="POST" enctype="multipart/form-data">
+    <label for="file">File:</label>
+    <input class="form-control" type="file" name="file"><br><br>
+    <input class="form-control" type="submit" value="Submit">
+</form>
+
+0x0.envs.net is NOT a platform for:
+    * child pornography
+    * malware, including “potentially unwanted applications”
+    * botnet command and control schemes involving this service
+    * anything even remotely related to crypto currencies
+    * hosting your backups
+    * spamming the service with CI build artifacts
+    * piracy
+    * alt-right shitposting
+
+If you run a server and like this site, clone it! Centralization is bad.
+https://github.com/lachs0r/0x0
+
+
 FILE RETENTION PERIOD
 ---------------------
 
@@ -390,15 +413,16 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 ABUSE
 -----
 
-If you would like to request permanent deletion, please contact lachs0r via
-IRC on Freenode, or send an email to lachs0r@(this domain).
+If you would like to request permanent deletion, please
+send an email to hostmaster@envs.net.
 
 Please allow up to 24 hours for a response.
 </pre>
+
 """.format(fhost_url(),
            maxsize, str(maxsizehalf).rjust(27), str(maxsizenum).rjust(27),
            maxsizeunit.rjust(54),
-           ", ".join(app.config["FHOST_MIME_BLACKLIST"]))
+           ", ".join(app.config["FHOST_MIME_BLACKLIST"]),fhost_url().split("/",2)[2])
 
 @app.route("/robots.txt")
 def robots():
