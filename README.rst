@@ -39,14 +39,13 @@ the following:
 INSTALL
 -------
 
-```bash
-apt update
-apt install python3-pip nginx uwsgi uwsgi-plugin-python3 certbot
-git clone https://github.com/cremesk/0x0.git /srv/0x0
+    apt update
+    apt install python3-pip nginx uwsgi uwsgi-plugin-python3 certbot
+    git clone https://github.com/cremesk/0x0.git /srv/0x0
+    
+    cd /srv/0x0
+    pip3 install --user `cat requirements.txt`
 
-cd /srv/0x0
-pip3 install --user `cat requirements.txt`
-```
 
 FAQ
 ---
