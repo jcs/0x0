@@ -379,7 +379,7 @@ UPLOAD DIRECTLY
     * alt-right shitposting
 
 If you run a server and like this site, clone it! Centralization is bad.
-https://github.com/lachs0r/0x0
+https://github.com/cremesk/0x0
 
 
 FILE RETENTION PERIOD
