@@ -342,31 +342,30 @@ def fhost():
         if maxsizehalf.is_integer():
             maxsizehalf = int(maxsizehalf)
 
-        return """<pre>
-THE NULL POINTER
-================
+        return """
+<html>
+  <head>
+    <title>{6}</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="https://envs.net/css_style.css">
+  </head>
+  <body>
+    <div>
+      <pre>
+<h2>THE NULL POINTER</h2>
 
 HTTP POST files here:
-    curl -F'file=@yourfile.png' {0}
+    <code>curl -F'file=@yourfile.png' {0}</code>
 You can also POST remote URLs:
-    curl -F'url=http://example.com/image.jpg' {0}
+    <code>curl -F'url=http://example.com/image.jpg' {0}</code>
 Or you can shorten URLs:
-    curl -F'shorten=http://example.com/some/long/url' {0}
+    <code>curl -F'shorten=http://example.com/some/long/url' {0}</code>
 
 File URLs are valid for at least 30 days and up to a year (see below).
 Shortened URLs do not expire.
 
 Maximum file size: {1}
 Not allowed: {5}
-
-
-UPLOAD DIRECTLY
----------------
-<form action="{0}" method="POST" enctype="multipart/form-data">
-    <label for="file">File:</label>
-    <input class="form-control" type="file" name="file"><br><br>
-    <input class="form-control" type="submit" value="Submit">
-</form>
 
 0x0.envs.net is NOT a platform for:
     * child pornography
@@ -378,12 +377,20 @@ UPLOAD DIRECTLY
     * piracy
     * alt-right shitposting
 
+<h3>UPLOAD DIRECTLY</h3>
+<form action="{0}" method="POST" enctype="multipart/form-data">
+    <label for="file">File:</label>
+    <input class="form-control" type="file" name="file">
+    <input class="form-control" type="submit" value="Submit">
+</form>
+
 If you run a server and like this site, clone it! Centralization is bad.
-https://github.com/cremesk/0x0
+<a href="https://github.com/cremesk/0x0" target="_blank">https://github.com/cremesk/0x0</a>
 
+You can also support it financially via Liberapay.
+<a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
 
-FILE RETENTION PERIOD
----------------------
+<h3>FILE RETENTION PERIOD</h3>
 
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
@@ -409,15 +416,16 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
           0{2}{3}
            {4}
 
-
-ABUSE
------
+<h3>ABUSE</h3>
 
 If you would like to request permanent deletion, please
-send an email to hostmaster@envs.net.
+send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster@envs.net</a>.
 
 Please allow up to 24 hours for a response.
 </pre>
+    </div>
+  </body>
+</html>
 
 """.format(fhost_url(),
            maxsize, str(maxsizehalf).rjust(27), str(maxsizenum).rjust(27),
