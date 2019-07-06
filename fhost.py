@@ -347,6 +347,7 @@ def fhost():
   <head>
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="envs.net | Null Pointer" />
     <link rel="stylesheet" href="https://envs.net/css_style.css">
   </head>
   <body>
@@ -397,7 +398,6 @@ and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal
 <code>0file yourfile.png</code>
 
 <h3>FILE RETENTION PERIOD</h3>
-
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
    days
@@ -423,7 +423,6 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
            {4}
 
 <h3>ABUSE</h3>
-
 If you would like to request permanent deletion, please
 send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster@envs.net</a>.
 
