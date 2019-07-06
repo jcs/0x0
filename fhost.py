@@ -342,7 +342,7 @@ def fhost():
         if maxsizehalf.is_integer():
             maxsizehalf = int(maxsizehalf)
 
-        return """
+        return """<!DOCTYPE html>
 <html>
   <head>
     <title>{6}</title>
@@ -350,10 +350,12 @@ def fhost():
     <link rel="stylesheet" href="https://envs.net/css_style.css">
   </head>
   <body>
-    <div>
+    <div style="float: left;">
       <pre>
-<h2>THE NULL POINTER</h2>
+<h2>envs.net | THE NULL POINTER</h2>
+<h4>file hosting and URL shortening service.</h4>
 
+<h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=@yourfile.png' {0}</code>
 You can also POST remote URLs:
@@ -363,9 +365,8 @@ Or you can shorten URLs:
 
 File URLs are valid for at least 30 days and up to a year (see below).
 Shortened URLs do not expire.
-
-Maximum file size: {1}
 Not allowed: {5}
+Maximum file size: {1}
 
 0x0.envs.net is NOT a platform for:
     * child pornography
@@ -377,18 +378,23 @@ Not allowed: {5}
     * piracy
     * alt-right shitposting
 
-<h3>UPLOAD DIRECTLY</h3>
-<form action="{0}" method="POST" enctype="multipart/form-data">
-    <label for="file">File:</label>
-    <input class="form-control" type="file" name="file">
-    <input class="form-control" type="submit" value="Submit">
-</form>
+<h3>REQUIREMENTS</h3>
+There is only one thing you need to use this service - curl.
+Curl is available on most platforms, including Windows, Mac OS X and Linux.
 
 If you run a server and like this site, clone it! Centralization is bad.
-<a href="https://github.com/cremesk/0x0" target="_blank">https://github.com/cremesk/0x0</a>
-
+<small><a href="https://github.com/cremesk/0x0" target="_blank">https://github.com/cremesk/0x0</a></small>
 You can also support it financially via Liberapay.
 <a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
+
+<h3>ALIAS</h3>
+To make your life easier, you can add alias to your <code>.bashrc</code> on Linux
+and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal session after that.
+<code>0file() &#123; curl -F"file=@$1" {0} &#125;
+0url() &#123; curl -F"url=$1" {0} &#125;
+0short() &#123; curl -F"shorten=$1" {0}; &#125;</code>
+
+<code>0file yourfile.png</code>
 
 <h3>FILE RETENTION PERIOD</h3>
 
@@ -423,6 +429,19 @@ send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20e
 
 Please allow up to 24 hours for a response.
 </pre>
+    </div>
+
+
+    <div style="float: right; margin-right: 2.5em;">
+
+<pre><blockquote style="min-width: 15%; max-width: 15%;">
+<h3>UPLOAD DIRECTLY</h3>
+<form action="{0}" method="POST" enctype="multipart/form-data">
+    <label for="file">File:</label>
+    <input class="form-control" type="file" name="file">
+    <input class="form-control" type="submit" value="Submit">
+</form></blockquote></pre>
+
     </div>
   </body>
 </html>
