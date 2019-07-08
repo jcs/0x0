@@ -348,17 +348,19 @@ def fhost():
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="envs.net | Null Pointer" />
-    <link rel="stylesheet" href="https://envs.net/css_style.css">
+    <link rel="stylesheet" href="https://envs.net/css_style.css" />
+    <script src="https://envs.net/darklight.js" ></script>
   </head>
-  <body>
+  <body id="body" class="light-mode">
+
     <div style="float: left;">
       <pre>
-<h2>envs.net | THE NULL POINTER</h2>
+<h2>envs.net &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
 
 <h3>USAGE</h3>
 HTTP POST files here:
-    <code>curl -F'file=@yourfile.png' {0}</code>
+    <code>curl -F'file=&#64;yourfile.png' {0}</code>
 You can also POST remote URLs:
     <code>curl -F'url=http://example.com/image.jpg' {0}</code>
 Or you can shorten URLs:
@@ -391,11 +393,11 @@ You can also support it financially via Liberapay.
 <h3>ALIAS</h3>
 To make your life easier, you can add alias to your <code>.bashrc</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal session after that.
-<code>0file() &#123; curl -F"file=@$1" {0} &#125;
-0url() &#123; curl -F"url=$1" {0} &#125;
-0short() &#123; curl -F"shorten=$1" {0}; &#125;</code>
+<code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
+0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
+0short&#40;&#41; &#123; curl -F"shorten=&#36;1" {0} ; &#125;</code>
 
-<code>0file yourfile.png</code>
+<code>0file "yourfile.png"</code>
 
 <h3>FILE RETENTION PERIOD</h3>
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
@@ -433,15 +435,25 @@ Please allow up to 24 hours for a response.
 
     <div style="float: right; margin-right: 2.5em;">
 
-<pre><blockquote style="min-width: 15%; max-width: 15%;">
+<pre class="sidebar"><blockquote>
 <h3>UPLOAD DIRECTLY</h3>
 <form action="{0}" method="POST" enctype="multipart/form-data">
     <label for="file">File:</label>
-    <input class="form-control" type="file" name="file">
+    <input class="form-control" type="file" name="file" style="width:250px;">
     <input class="form-control" type="submit" value="Submit">
 </form></blockquote></pre>
 
     </div>
+
+<!-- Button DarkLight -->
+    <div style="float: right; margin-top: 1em; margin-right: 1em; position: fixed; top: 0; right: 0;">
+      <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
+    </div>
+
+<script>
+  setThemeFromCookie();
+</script>
+
   </body>
 </html>
 
