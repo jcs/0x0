@@ -348,13 +348,14 @@ def fhost():
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="envs.net | Null Pointer" />
-    <link rel="stylesheet" href="https://envs.net/css_style.css" />
-    <script src="https://envs.net/darklight.js" ></script>
+    <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
+    <script src="https://envs.net/js/darklight.js"></script>
   </head>
   <body id="body" class="light-mode">
+    <div style="clear:both; min-width: 1300px;">
 
-    <div style="float: left;">
-      <pre>
+      <div style="float: left;">
+<pre>
 <h2>envs.net &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
 
@@ -426,15 +427,15 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
 <h3>ABUSE</h3>
 If you would like to request permanent deletion, please
-send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster@envs.net</a>.
+send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster&#64;envs.net</a>.
 
 Please allow up to 24 hours for a response.
 </pre>
-    </div>
+      </div>
 
+<!-- UPLOAD -->
 
-    <div style="float: right; margin-right: 2.5em;">
-
+      <div style="float: right; margin-right: 2.5em;">
 <pre class="sidebar"><blockquote>
 <h3>UPLOAD DIRECTLY</h3>
 <form action="{0}" method="POST" enctype="multipart/form-data">
@@ -442,14 +443,14 @@ Please allow up to 24 hours for a response.
     <input class="form-control" type="file" name="file" style="width:250px;">
     <input class="form-control" type="submit" value="Submit">
 </form></blockquote></pre>
-
-    </div>
+      </div>
 
 <!-- Button DarkLight -->
-    <div style="float: right; margin-top: 1em; margin-right: 1em; position: fixed; top: 0; right: 0;">
-      <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
-    </div>
+      <div class="button_darklight">
+        <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
+      </div>
 
+    </div>
 <script>
   setThemeFromCookie();
 </script>
