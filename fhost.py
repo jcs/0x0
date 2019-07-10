@@ -398,6 +398,7 @@ and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal
 0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
 0short&#40;&#41; &#123; curl -F"shorten=&#36;1" {0} ; &#125;</code>
 
+now you can use:
 <code>0file "yourfile.png"</code>
 
 <h3>FILE RETENTION PERIOD</h3>
