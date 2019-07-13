@@ -387,7 +387,7 @@ There is only one thing you need to use this service - curl.
 Curl is available on most platforms, including Windows, Mac OS X and Linux.
 
 If you run a server and like this site, clone it! Centralization is bad.
-<small><a href="https://github.com/cremesk/0x0" target="_blank">https://github.com/cremesk/0x0</a></small>
+<small><a href="https://github.com/envs-net/0x0" target="_blank">https://github.com/envs-net/0x0</a></small>
 You can also support it financially via Liberapay.
 <a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
 
