@@ -392,7 +392,7 @@ You can also support it financially via Liberapay.
 <a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
 
 <h3>ALIAS</h3>
-To make your life easier, you can add alias to your <code>.bashrc</code> on Linux
+To make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal session after that.
 <code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
 0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
