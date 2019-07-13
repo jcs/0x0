@@ -363,7 +363,7 @@ def fhost():
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
 You can also POST remote URLs:
-    <code>curl -F'url=http://example.com/image.jpg' {0}</code>
+    <code>curl -F'url=https://example.com/image.jpg' {0}</code>
 Or you can shorten URLs:
     <code>curl -F'shorten=http://example.com/some/long/url' {0}</code>
 
