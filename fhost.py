@@ -362,15 +362,15 @@ def fhost():
 <h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
-You can also POST remote URLs:
+you can also POST remote URLs:
     <code>curl -F'url=https://example.com/image.jpg' {0}</code>
-Or you can shorten URLs:
+or you can shorten URLs:
     <code>curl -F'shorten=http://example.com/some/long/url' {0}</code>
 
-File URLs are valid for at least 30 days and up to a year (see below).
-Shortened URLs do not expire.
-Not allowed: {5}
-Maximum file size: {1}
+file URLs are valid for at least 30 days and up to a year (see below).
+shortened URLs do not expire.
+not allowed: {5}
+maximum file size: {1}
 
 0x0.envs.net is NOT a platform for:
     * child pornography
@@ -383,17 +383,17 @@ Maximum file size: {1}
     * alt-right shitposting
 
 <h3>REQUIREMENTS</h3>
-There is only one thing you need to use this service - curl.
-Curl is available on most platforms, including Windows, Mac OS X and Linux.
+there is only one thing you need to use this service - curl.
+curl is available on most platforms, including Windows, Mac OS X and Linux.
 
-If you run a server and like this site, clone it! Centralization is bad.
+if you run a server and like this site, clone it! centralization is bad.
 <small><a href="https://github.com/envs-net/0x0" target="_blank">https://github.com/envs-net/0x0</a></small>
-You can also support it financially via Liberapay.
+you can also support it financially via liberapay.
 <a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
 
 <h3>ALIAS</h3>
-To make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
-and <code>.bash_profile</code> on Mac OS X. Just remember to reset your terminal session after that.
+to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
+and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal session after that.
 <code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
 0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
 0short&#40;&#41; &#123; curl -F"shorten=&#36;1" {0} ; &#125;</code>
@@ -427,10 +427,10 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
            {4}
 
 <h3>ABUSE</h3>
-If you would like to request permanent deletion, please
+if you would like to request permanent deletion, please
 send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster&#64;envs.net</a>.
 
-Please allow up to 24 hours for a response.
+please allow up to 24 hours for a response.
 </pre>
       </div>
 
