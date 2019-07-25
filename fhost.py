@@ -389,7 +389,7 @@ curl is available on most platforms, including Windows, Mac OS X and Linux.
 if you run a server and like this site, clone it! centralization is bad.
 <small><a href="https://github.com/envs-net/0x0" target="_blank">https://github.com/envs-net/0x0</a></small>
 you can also support it financially via liberapay.
-<a href="https://liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
+<a href="https://en.liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
 
 <h3>ALIAS</h3>
 to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
@@ -400,6 +400,8 @@ and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal
 
 now you can use:
 <code>0file "yourfile.png"</code>
+
+<em>if you want a nice wrapper, try <a href="https://tildegit.org/tomasino/pb">~tomasino's pb</a></em>
 
 <h3>FILE RETENTION PERIOD</h3>
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
