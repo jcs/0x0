@@ -40,7 +40,6 @@ app.config["FHOST_EXT_OVERRIDE"] = {
 # default blacklist to avoid AV mafia extortion
 app.config["FHOST_MIME_BLACKLIST"] = [
     "application/x-dosexec",
-    "application/x-executable",
     "application/java-archive",
     "application/java-vm"
 ]
@@ -133,6 +132,12 @@ def is_fhost_url(url):
     return url.startswith(fhost_url()) or url.startswith(fhost_url("https"))
 
 def shorten(url):
+    # handler to convert gopher links to HTTP(S) proxy
+    gopher = "gopher://"
+    length = len(gopher)
+    if url[:length] == gopher:
+        url = "https://gopher.tilde.team/{}".format(url[length:])
+
     if len(url) > app.config["MAX_URL_LENGTH"]:
         abort(414)
 
@@ -234,6 +239,12 @@ def store_file(f, addr):
         return sf.geturl()
 
 def store_url(url, addr):
+    # handler to convert gopher links to HTTP(S) proxy
+    gopher = "gopher://"
+    length = len(gopher)
+    if url[:length] == gopher:
+        url = "https://gopher.tilde.team/{}".format(url[length:])
+
     if is_fhost_url(url):
         return segfault(508)
 

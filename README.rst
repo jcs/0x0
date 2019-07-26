@@ -64,3 +64,9 @@ A:
     This is done to make dealing with legal claims and accidental uploads
     easier, e.g. when a user requests removal of all text files uploaded from
     a certain address within a given time frame (it happens).
+
+Q:
+    Do you accept donations?
+A:
+    Only if you insist. I’ve spent very little time and effort on this service
+    and I don’t feel like I should be taking money for it.
