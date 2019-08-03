@@ -2,7 +2,7 @@ The Null Pointer
 ================
 
 This is a no-bullshit file hosting and URL shortening service that also runs
-`0x0.envs.net <https://0x0.envs.net>`_. Use with uWSGI.
+`envs.sh <https://envs.sh>`_. Use with uWSGI.
 
 If you are running nginx, you should use the ``X-Accel-Redirect`` header.
 To make it work, include this in your nginx config’s ``server`` block::

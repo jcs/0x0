@@ -358,7 +358,7 @@ def fhost():
   <head>
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="envs.net | Null Pointer" />
+    <meta name="description" content="envs.sh| Null Pointer" />
     <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
     <script src="https://envs.net/js/darklight.js"></script>
   </head>
@@ -367,7 +367,7 @@ def fhost():
 
       <div style="float: left;">
 <pre>
-<h2>envs.net &#124; THE NULL POINTER</h2>
+<h2>envs.sh &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
 
 <h3>USAGE</h3>
@@ -383,7 +383,7 @@ shortened URLs do not expire.
 not allowed: {5}
 maximum file size: {1}
 
-0x0.envs.net is NOT a platform for:
+envs.sh is NOT a platform for:
     * child pornography
     * malware, including “potentially unwanted applications”
     * botnet command and control schemes involving this service
@@ -441,7 +441,7 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
 <h3>ABUSE</h3>
 if you would like to request permanent deletion, please
-send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.net" target="_blank">hostmaster&#64;envs.net</a>.
+send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.sh" target="_blank">hostmaster&#64;envs.net</a>.
 
 please allow up to 24 hours for a response.
 </pre>
