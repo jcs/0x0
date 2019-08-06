@@ -358,7 +358,7 @@ def fhost():
   <head>
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="description" content="envs.sh| Null Pointer" />
+    <meta name="description" content="envs.sh | Null Pointer" />
     <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
     <script src="https://envs.net/js/darklight.js"></script>
   </head>
@@ -369,7 +369,6 @@ def fhost():
 <pre>
 <h2>envs.sh &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
-
 <h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
