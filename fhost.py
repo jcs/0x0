@@ -411,7 +411,7 @@ and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal
 now you can use:
 <code>0file "yourfile.png"</code>
 
-<em>if you want a nice wrapper, try <a href="https://tildegit.org/tomasino/pb">~tomasino's pb</a></em>
+<em>if you want a nice wrapper, try <a href="https://git.envs.net/envs/pb">~tomasino's pb</a></em>
 
 <h3>FILE RETENTION PERIOD</h3>
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
