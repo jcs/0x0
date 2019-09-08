@@ -362,7 +362,7 @@ def fhost():
     <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
     <script src="https://envs.net/js/darklight.js"></script>
   </head>
-  <body id="body" class="light-mode">
+  <body id="body" class="dark-mode">
     <div style="clear:both; min-width: 1300px;">
 
       <div style="float: left;">
