@@ -354,7 +354,7 @@ def fhost():
             maxsizehalf = int(maxsizehalf)
 
         return """<!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>{6}</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
