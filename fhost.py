@@ -330,14 +330,17 @@ def dump_urls(start=0):
 @app.route("/", methods=["GET", "POST"])
 def fhost():
     if request.method == "POST":
-        sf = None
+        out = None
 
         if "file" in request.files:
-            return store_file(request.files["file"], request.remote_addr)
+            out = store_file(request.files["file"], request.remote_addr)
         elif "url" in request.form:
-            return store_url(request.form["url"], request.remote_addr)
+            out = store_url(request.form["url"], request.remote_addr)
         elif "shorten" in request.form:
-            return shorten(request.form["shorten"])
+            out = shorten(request.form["shorten"])
+
+        if not out == None:
+            return Response(out, mimetype="text/plain")
 
         abort(400)
     else:
