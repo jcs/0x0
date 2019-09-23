@@ -386,15 +386,16 @@ not allowed: {5}
 maximum file size: {1}
 
 envs.sh is NOT a platform for:
-    * child pornography
-    * malware, including “potentially unwanted applications”
-    * botnet command and control schemes involving this service
-    * anything even remotely related to crypto currencies
-    * hosting your backups
-    * spamming the service with CI build artifacts
-    * piracy
-    * alt-right shitposting
-
+<ul>
+<li>child pornography</li>
+<li>malware, including “potentially unwanted applications”</li>
+<li>botnet command and control schemes involving this service</li>
+<li>anything even remotely related to crypto currencies</li>
+<li>hosting your backups</li>
+<li>spamming the service with CI build artifacts</li>
+<li>piracy</li>
+<li>alt-right shitposting</li>
+</ul>
 <h3>REQUIREMENTS</h3>
 there is only one thing you need to use this service - curl.
 curl is available on most platforms, including Windows, Mac OS X and Linux.
