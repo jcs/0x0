@@ -468,9 +468,7 @@ please allow up to 24 hours for a response.
       </div>
 
     </div>
-<script>
-  setThemeFromCookie();
-</script>
+<script>setThemeFromCookie();</script>
 
   </body>
 </html>
