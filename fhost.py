@@ -366,7 +366,7 @@ def fhost():
     <script src="https://envs.net/js/darklight.js"></script>
   </head>
   <body id="body" class="dark-mode">
-    <div style="clear:both; min-width: 1300px;">
+    <div style="clear:both; min-width: 1150px;">
 
       <div style="float: left;">
 <pre><blockquote>
