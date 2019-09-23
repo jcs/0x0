@@ -369,9 +369,10 @@ def fhost():
     <div style="clear:both; min-width: 1300px;">
 
       <div style="float: left;">
-<pre>
+<pre><blockquote>
 <h2>envs.sh &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
+<blockquote>
 <h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
