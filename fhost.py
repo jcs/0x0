@@ -386,6 +386,10 @@ shortened URLs do not expire.
 not allowed: {5}
 maximum file size: {1}
 
+<h3>ACCEPTABLE USE POLICY</h3>
+please do not post any informations that
+may violate law (login/password lists, email lists, personal information).
+
 envs.sh is NOT a platform for:
 <ul>
 <li>child pornography</li>
