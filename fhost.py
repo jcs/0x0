@@ -363,7 +363,6 @@ def fhost():
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="envs.sh | Null Pointer" />
     <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
-    <script src="https://envs.net/js/darklight.js"></script>
   </head>
   <body id="body" class="dark-mode">
     <div style="clear:both; min-width: 1150px;">
@@ -457,7 +456,7 @@ please allow up to 24 hours for a response.
 
 <!-- UPLOAD -->
 
-      <div style="float: right; margin-right: 2.5em;">
+      <div id="sidebar">
 <pre class="sidebar"><blockquote>
 <h3>UPLOAD DIRECTLY</h3>
 <form action="{0}" method="POST" enctype="multipart/form-data">
@@ -467,13 +466,7 @@ please allow up to 24 hours for a response.
 </form></blockquote></pre>
       </div>
 
-<!-- Button DarkLight -->
-      <div class="button_darklight">
-        <button type="button" name="dark_light" onclick="toggleDarkLight()" title="Toggle dark/light mode">🌛</button>
-      </div>
-
     </div>
-<script>setThemeFromCookie();</script>
 
   </body>
 </html>
