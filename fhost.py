@@ -370,8 +370,8 @@ def fhost():
       <div id="main">
 <div class="block_head">
 <pre>
-<h2>envs.sh &#124; THE NULL POINTER</h2>
-<h4>file hosting and URL shortening service.</h4>
+<h1><em>envs.sh &#124; THE NULL POINTER</em></h1>
+<h3><em>file hosting and URL shortening service.</em></h3>
 </pre>
 </div>
 
