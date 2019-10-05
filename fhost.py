@@ -373,6 +373,7 @@ def fhost():
 <h2>envs.sh &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
 </pre>
+</div>
 
 <pre>
 <h3>USAGE</h3>
