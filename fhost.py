@@ -365,13 +365,16 @@ def fhost():
     <link rel="stylesheet" href="https://envs.net/css/css_style.css" />
   </head>
   <body id="body" class="dark-mode">
-    <div style="clear:both; min-width: 1150px;">
+    <div class="clear" style="min-width: 1150px;">
 
-      <div style="float: left;">
-<pre><blockquote>
+      <div id="main">
+<div class="block_head">
+<pre>
 <h2>envs.sh &#124; THE NULL POINTER</h2>
 <h4>file hosting and URL shortening service.</h4>
-</blockquote>
+</pre>
+
+<pre>
 <h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
