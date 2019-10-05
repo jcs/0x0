@@ -136,7 +136,7 @@ def shorten(url):
     gopher = "gopher://"
     length = len(gopher)
     if url[:length] == gopher:
-        url = "https://gopher.tilde.team/{}".format(url[length:])
+        url = "https://gopher.envs.net/{}".format(url[length:])
 
     if len(url) > app.config["MAX_URL_LENGTH"]:
         abort(414)
@@ -243,7 +243,7 @@ def store_url(url, addr):
     gopher = "gopher://"
     length = len(gopher)
     if url[:length] == gopher:
-        url = "https://gopher.tilde.team/{}".format(url[length:])
+        url = "https://gopher.envs.net/{}".format(url[length:])
 
     if is_fhost_url(url):
         return segfault(508)
@@ -461,13 +461,15 @@ please allow up to 24 hours for a response.
 <!-- UPLOAD -->
 
       <div id="sidebar">
-<pre class="sidebar"><blockquote>
+<div class="block">
+<pre>
 <h3>UPLOAD DIRECTLY</h3>
 <form action="{0}" method="POST" enctype="multipart/form-data">
     <label for="file">File:</label>
     <input class="form-control" type="file" name="file" style="width:250px;">
     <input class="form-control" type="submit" value="Submit">
-</form></blockquote></pre>
+</form></pre>
+</div>
       </div>
 
     </div>
