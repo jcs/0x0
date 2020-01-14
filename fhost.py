@@ -425,7 +425,7 @@ and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal
 
 now you can use:
 <code>0file "yourfile.png"
-#35; or
+&#35; or
 echo "text here" | 0pb</code>
 
 <em>if you want a nice wrapper, try <a href="https://git.envs.net/envs/pb">~tomasino's pb</a></em>
