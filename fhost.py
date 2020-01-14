@@ -383,6 +383,8 @@ you can also POST remote URLs:
     <code>curl -F'url=https://example.com/image.jpg' {0}</code>
 or you can shorten URLs:
     <code>curl -F'shorten=http://example.com/some/long/url' {0}</code>
+post your text directly:
+    <code>echo "text here" | curl -F'file=@-;' {0}</code>
 
 file URLs are valid for at least 30 days and up to a year (see below).
 shortened URLs do not expire.
