@@ -379,12 +379,12 @@ def fhost():
 <h3>USAGE</h3>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
+post your text directly:
+    <code>echo "text here" | curl -F'file=@-;' {0}</code>
 you can also POST remote URLs:
     <code>curl -F'url=https://example.com/image.jpg' {0}</code>
 or you can shorten URLs:
     <code>curl -F'shorten=http://example.com/some/long/url' {0}</code>
-post your text directly:
-    <code>echo "text here" | curl -F'file=@-;' {0}</code>
 
 file URLs are valid for at least 30 days and up to a year (see below).
 shortened URLs do not expire.
@@ -419,11 +419,14 @@ you can also support it financially via liberapay.
 to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal session after that.
 <code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
+0pb&#40;&#41; &#123; curl -F'file=@-;' {0} ; &#125;
 0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
 0short&#40;&#41; &#123; curl -F"shorten=&#36;1" {0} ; &#125;</code>
 
 now you can use:
-<code>0file "yourfile.png"</code>
+<code>0file "yourfile.png"
+#35; or
+echo "text here" | 0pb</code>
 
 <em>if you want a nice wrapper, try <a href="https://git.envs.net/envs/pb">~tomasino's pb</a></em>
 
