@@ -368,15 +368,14 @@ def fhost():
     <div class="clear" style="min-width: 1150px;">
 
       <div id="main">
-<div class="block_head">
-<pre>
+<div class="block">
 <h1><em>envs.sh &#124; THE NULL POINTER</em></h1>
 <h3><em>file hosting and URL shortening service.</em></h3>
-</pre>
+<br />
 </div>
 
-<pre>
 <h3>USAGE</h3>
+<pre>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
 post your text directly:
@@ -390,23 +389,30 @@ file URLs are valid for at least 30 days and up to a year (see below).
 shortened URLs do not expire.
 not allowed: {5}
 maximum file size: {1}
+</pre>
+<br />
 
 <h3>ACCEPTABLE USE POLICY</h3>
+<pre>
 please do not post any informations that
 may violate law (login/password lists, email lists, personal information).
 
 envs.sh is NOT a platform for:
+</pre>
+<br />
 <ul>
-<li>child pornography</li>
-<li>malware, including “potentially unwanted applications”</li>
-<li>botnet command and control schemes involving this service</li>
-<li>anything even remotely related to crypto currencies</li>
-<li>hosting your backups</li>
-<li>spamming the service with CI build artifacts</li>
-<li>piracy</li>
-<li>alt-right shitposting</li>
+    <li>child pornography</li>
+    <li>malware, including “potentially unwanted applications”</li>
+    <li>botnet command and control schemes involving this service</li>
+    <li>anything even remotely related to crypto currencies</li>
+    <li>hosting your backups</li>
+    <li>spamming the service with CI build artifacts</li>
+    <li>piracy</li>
+    <li>alt-right shitposting</li>
 </ul>
+<br />
 <h3>REQUIREMENTS</h3>
+<pre>
 there is only one thing you need to use this service - curl.
 curl is available on most platforms, including Windows, Mac OS X and Linux.
 
@@ -414,8 +420,11 @@ if you run a server and like this site, clone it! centralization is bad.
 <small><a href="https://github.com/envs-net/0x0" target="_blank">https://github.com/envs-net/0x0</a></small>
 you can also support it financially via liberapay.
 <a href="https://en.liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img alt="Donate using Liberapay" src="https://img.shields.io/liberapay/receives/creme.svg?logo=liberapay"></a>
+</pre>
+<br />
 
 <h3>ALIAS</h3>
+<pre>
 to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal session after that.
 <code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
@@ -429,8 +438,11 @@ now you can use:
 echo "text here" | 0pb</code>
 
 <em>if you want a nice wrapper, try <a href="https://git.envs.net/envs/pb">~tomasino's pb</a></em>
+</pre>
+<br />
 
 <h3>FILE RETENTION PERIOD</h3>
+<pre>
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
    days
@@ -454,8 +466,11 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
      30 |                                    ....................
           0{2}{3}
            {4}
+</pre>
+<br />
 
 <h3>ABUSE</h3>
+<pre>
 if you would like to request permanent deletion, please
 send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.sh" target="_blank">hostmaster&#64;envs.net</a>.
 
@@ -467,13 +482,13 @@ please allow up to 24 hours for a response.
 
       <div id="sidebar">
 <div class="block">
-<pre>
 <h3>UPLOAD DIRECTLY</h3>
+<br />
 <form action="{0}" method="POST" enctype="multipart/form-data">
-    <label for="file">File:</label>
-    <input class="form-control" type="file" name="file" style="width:250px;">
-    <input class="form-control" type="submit" value="Submit">
-</form></pre>
+<label for="file">File:</label><br />
+<input class="form-control" type="file" name="file" style="width:250px;"><br />
+<input class="form-control" type="submit" value="Submit">
+</form>
 </div>
       </div>
 
