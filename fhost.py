@@ -370,11 +370,11 @@ def fhost():
       <div id="main">
 <div class="block">
 <h1><em>envs.sh &#124; THE NULL POINTER</em></h1>
-<h3><em>file hosting and URL shortening service.</em></h3>
+<h2><em>file hosting and URL shortening service.</em></h2>
 <br />
 </div>
 
-<h3>USAGE</h3>
+<h2>USAGE</h2>
 <pre>
 HTTP POST files here:
     <code>curl -F'file=&#64;yourfile.png' {0}</code>
@@ -392,7 +392,7 @@ maximum file size: {1}
 </pre>
 <br />
 
-<h3>ACCEPTABLE USE POLICY</h3>
+<h2>ACCEPTABLE USE POLICY</h2>
 <pre>
 please do not post any informations that
 may violate law (login/password lists, email lists, personal information).
@@ -411,7 +411,7 @@ envs.sh is NOT a platform for:
     <li>alt-right shitposting</li>
 </ul>
 <br />
-<h3>REQUIREMENTS</h3>
+<h2>REQUIREMENTS</h2>
 <pre>
 there is only one thing you need to use this service - curl.
 curl is available on most platforms, including Windows, Mac OS X and Linux.
@@ -423,7 +423,7 @@ you can also support it financially via liberapay.
 </pre>
 <br />
 
-<h3>ALIAS</h3>
+<h2>ALIAS</h2>
 <pre>
 to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal session after that.
@@ -441,7 +441,7 @@ echo "text here" | 0pb</code>
 </pre>
 <br />
 
-<h3>FILE RETENTION PERIOD</h3>
+<h2>FILE RETENTION PERIOD</h2>
 <pre>
 retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 
@@ -469,7 +469,7 @@ retention = min_age + (-max_age + min_age) * pow((file_size / max_size - 1), 3)
 </pre>
 <br />
 
-<h3>ABUSE</h3>
+<h2>ABUSE</h2>
 <pre>
 if you would like to request permanent deletion, please
 send an email to <a href="mailto:hostmaster@envs.net?subject=Abuse%200x0%20-%20envs.sh" target="_blank">hostmaster&#64;envs.net</a>.
@@ -482,7 +482,7 @@ please allow up to 24 hours for a response.
 
       <div id="sidebar">
 <div class="block">
-<h3>UPLOAD DIRECTLY</h3>
+<h2>UPLOAD DIRECTLY</h2>
 <br />
 <form action="{0}" method="POST" enctype="multipart/form-data">
 <label>File:</label><br />
