@@ -485,7 +485,7 @@ please allow up to 24 hours for a response.
 <h3>UPLOAD DIRECTLY</h3>
 <br />
 <form action="{0}" method="POST" enctype="multipart/form-data">
-<label for="file">File:</label><br />
+<label>File:</label><br />
 <input class="form-control" type="file" name="file" style="width:250px;"><br />
 <input class="form-control" type="submit" value="Submit">
 </form>
