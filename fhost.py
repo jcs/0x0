@@ -428,7 +428,7 @@ you can also support it financially via liberapay.
 to make your life easier, you can add aliases to your <code>.bash_aliases</code> on Linux
 and <code>.bash_profile</code> on Mac OS X. just remember to reset your terminal session after that.
 <code>0file&#40;&#41; &#123; curl -F"file=&#64;&#36;1" {0} ; &#125;
-0pb&#40;&#41; &#123; curl -F'file=@-;' {0} ; &#125;
+0pb&#40;&#41; &#123; curl -F"file=@-;" {0} ; &#125;
 0url&#40;&#41; &#123; curl -F"url=&#36;1" {0} ; &#125;
 0short&#40;&#41; &#123; curl -F"shorten=&#36;1" {0} ; &#125;</code>
 
