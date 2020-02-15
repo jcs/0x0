@@ -419,7 +419,7 @@ curl is available on most platforms, including Windows, Mac OS X and Linux.
 if you run a server and like this site, clone it! centralization is bad.
 <small><a href="https://github.com/envs-net/0x0" target="_blank">https://github.com/envs-net/0x0</a></small>
 you can also support it financially via liberapay.
-<a href="https://en.liberapay.com/creme/donate" target="_blank" style="border-bottom-color: transparent;"><img src="https://img.shields.io/liberapay/receives/envs.net.svg?logo=liberapay" alt="img_shield_receives_via_liberapay"></a>
+<a href="https://en.liberapay.com/envs.net/donate" target="_blank" style="border-bottom-color: transparent;"><img src="https://img.shields.io/liberapay/receives/envs.net.svg?logo=liberapay" alt="img_shield_receives_via_liberapay"></a>
 </pre>
 <br />
 
