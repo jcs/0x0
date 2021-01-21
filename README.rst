@@ -36,6 +36,15 @@ the following:
 * ``ffmpegthumbnailer`` executable in ``$PATH``
 
 
+EXIF Stripping
+--------------
+
+When ``STRIP_IMAGE_EXIF`` is enabled, all images uploaded will be
+processed through exiftool to strip all EXIF data except the orientation
+tag.
+Requires the ``exiftool`` script in ``$PATH``.
+
+
 INSTALL
 -------
 ::
