@@ -68,6 +68,11 @@ app.config["FHOST_UPLOAD_BLACKLIST"] = "tornodes.txt"
 app.config["NSFW_DETECT"] = False
 app.config["NSFW_THRESHOLD"] = 0.608
 
+app.config["STRIP_IMAGE_EXIF"] = True
+
+if app.config["STRIP_IMAGE_EXIF"]:
+    import subprocess
+
 if app.config["NSFW_DETECT"]:
     from nsfw_detect import NSFWDetector
     nsfw = NSFWDetector()
@@ -185,12 +190,7 @@ def in_upload_bl(addr):
 
     return False
 
-def store_file(f, addr):
-    if in_upload_bl(addr):
-        return "Your host is blocked from uploading files.\n", 451
-
-    data = f.stream.read()
-    digest = sha256(data).hexdigest()
+def check_existing(digest, data, addr):
     existing = File.query.filter_by(sha256=digest).first()
 
     if existing:
@@ -212,50 +212,78 @@ def store_file(f, addr):
         db.session.commit()
 
         return existing.geturl()
+
+    return None
+
+def store_file(f, addr):
+    if in_upload_bl(addr):
+        return "Your host is blocked from uploading files.\n", 451
+
+    data = f.stream.read()
+    digest = sha256(data).hexdigest()
+
+    exists = check_existing(digest, data, addr)
+    if exists != None:
+        return exists
+
+    guessmime = mimedetect.from_buffer(data)
+
+    if not f.content_type or not "/" in f.content_type or f.content_type == "application/octet-stream":
+        mime = guessmime
     else:
-        guessmime = mimedetect.from_buffer(data)
+        mime = f.content_type
 
-        if not f.content_type or not "/" in f.content_type or f.content_type == "application/octet-stream":
-            mime = guessmime
+    if mime in app.config["FHOST_MIME_BLACKLIST"] or guessmime in app.config["FHOST_MIME_BLACKLIST"]:
+        abort(415)
+
+    if mime.startswith("text/") and not "charset" in mime:
+        mime += "; charset=utf-8"
+
+    ext = os.path.splitext(f.filename)[1]
+
+    if not ext:
+        gmime = mime.split(";")[0]
+
+        if not gmime in app.config["FHOST_EXT_OVERRIDE"]:
+            ext = guess_extension(gmime)
         else:
-            mime = f.content_type
+            ext = app.config["FHOST_EXT_OVERRIDE"][gmime]
+    else:
+        ext = ext[:8]
 
-        if mime in app.config["FHOST_MIME_BLACKLIST"] or guessmime in app.config["FHOST_MIME_BLACKLIST"]:
-            abort(415)
+    if not ext:
+        ext = ".bin"
 
-        if mime.startswith("text/") and not "charset" in mime:
-            mime += "; charset=utf-8"
+    if app.config["STRIP_IMAGE_EXIF"] and mime.startswith("image/"):
+        p = subprocess.Popen(["exiftool",
+            "-stay_open", "true",
+            "-all=",
+            "-tagsfromfile", "@",
+            "-Orientation",
+            "-" ], stdout = subprocess.PIPE, stdin = subprocess.PIPE)
+        p.stdin.write(data)
+        p.stdin.close()
+        data = p.stdout.read()
+        digest = sha256(data).hexdigest()
+        exists = check_existing(digest, data, addr)
+        if exists != None:
+            return exists
 
-        ext = os.path.splitext(f.filename)[1]
+    spath = getpath(digest)
 
-        if not ext:
-            gmime = mime.split(";")[0]
+    with open(spath, "wb") as of:
+        of.write(data)
 
-            if not gmime in app.config["FHOST_EXT_OVERRIDE"]:
-                ext = guess_extension(gmime)
-            else:
-                ext = app.config["FHOST_EXT_OVERRIDE"][gmime]
-        else:
-            ext = ext[:8]
+    if app.config["NSFW_DETECT"]:
+        nsfw_score = nsfw.detect(spath)
+    else:
+        nsfw_score = None
 
-        if not ext:
-            ext = ".bin"
+    sf = File(digest, ext, mime, addr, nsfw_score)
+    db.session.add(sf)
+    db.session.commit()
 
-        spath = getpath(digest)
-
-        with open(spath, "wb") as of:
-            of.write(data)
-
-        if app.config["NSFW_DETECT"]:
-            nsfw_score = nsfw.detect(spath)
-        else:
-            nsfw_score = None
-
-        sf = File(digest, ext, mime, addr, nsfw_score)
-        db.session.add(sf)
-        db.session.commit()
-
-        return sf.geturl()
+    return sf.geturl()
 
 def store_url(url, addr):
     # handler to convert gopher links to HTTP(S) proxy
